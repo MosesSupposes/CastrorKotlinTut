@@ -1,4 +1,8 @@
 fun main() {
-    val c: Char = 'a' // chars are delimited by single quotes
-    val firstName = "Moses" // strings are delimited by double quotes
+    var message = """
+        Hello, 
+        My name is Moses Samuel.
+        How are you?
+    """.trimIndent()
+    println(message)
 }
