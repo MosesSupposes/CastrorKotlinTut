@@ -1,5 +1,5 @@
 fun main() {
-    printUserInfo(lastName = "Samuel" , firstName = "Moses", age = 22, likesMovies= false, lovesPopcorn = false, isSunburned = false)
+    printUserInfo("Moses" , "Samuel", age = 22, likesMovies= false, lovesPopcorn = false, isSunburned = false)
 }
 
 fun printUserInfo(firstName: String, lastName: String, age: Int, isSunburned: Boolean, likesMovies: Boolean, lovesPopcorn: Boolean) {
