@@ -13,3 +13,6 @@ repositories {
 tasks.withType<KotlinCompile>() {
     kotlinOptions.jvmTarget = "1.8"
 }
+dependencies {
+    implementation("org.junit.jupiter:junit-jupiter:5.4.2")
+}
