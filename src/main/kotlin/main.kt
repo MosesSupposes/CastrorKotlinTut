@@ -1,13 +1,14 @@
 fun main() {
-    val authors = arrayOf("Dr. Suess", "Moses Samuel")
-    printBookInfo("Green Eggs And Ham", *authors)
+    printUserInfo("John Doe")
+    printUserInfo("Moses Samuel", 22)
 }
 
-fun printBookInfo(title: String, vararg authors: String) {
-    print("$title by")
-    for (author in authors) {
-        print(" $author")
-    }
+fun printUserInfo(name: String) {
+    println("$name")
+}
+
+fun printUserInfo(name: String, age: Int) {
+    println("$name is $age years old.")
 }
 
 
