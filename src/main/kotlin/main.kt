@@ -1,5 +1,6 @@
 fun main() {
-    Constants.MAX_AGE
-    Constants.MIN_AGE
+    val user = User("Moses", "Samuel")
+    user.favoriteCity = "Minneapolis"
+    println(user.toString())
 }
 
