@@ -1,6 +1,6 @@
 fun main() {
-    val p = Person("Moses", 22)
-    val c = Chef("Bob", 33, "Ribs")
-
-    c.setMyFavoriteFood("Potato")
+    val v = Vehicle("Red")
+    val t = Truck("blue")
+    v.addAxle(4)
 }
+
