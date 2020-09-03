@@ -1,5 +1,6 @@
 fun main() {
-    AccountType.values().forEach { println(it) }
+   val accounType = (AccountType.getAccountTypeByName("gold"))
+    println(accounType)
 }
 
 
@@ -9,4 +10,8 @@ enum class AccountType() {
     SILVER,
     GOLD,
     PLATINUM;
+
+    companion object {
+        fun getAccountTypeByName(name: String) = valueOf(name.toUpperCase())
+    }
 }
