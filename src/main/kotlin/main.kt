@@ -1,9 +1,8 @@
 fun main() {
     val p1 = Person("Moses", "Samuel", 22)
-    val firstName = p1.component1()
-    val lastName = p1.component2()
-    val age = p1.component3()
 
+    // The destructured values below are implemented by calling the .componentN methods on the p1 instance
+    val (firstName, lastName, age) = p1
     println(firstName)
     println(lastName)
     println(age)
