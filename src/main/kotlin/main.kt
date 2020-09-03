@@ -1,11 +1,9 @@
 fun main() {
-//    val pair = Pair("foo", "bar") // this data class comes with Kotlin's standard lib
-    val pair = "foo" to "bar" // this line is equivalent to the line above
-    println(pair.first)
-    println(pair.second)
+    val p = Person("Moses", 22)
+    val c = Chef("Bobj", 33, "Ribs")
 
-    val triple = Triple("foo", "bar", "baz")
-    println(triple.first)
-    println(triple.second)
-    println(triple.third)
+    p.printMyFavoriteFood()
+
+    c.setMyFavoriteFood("Celery")
+    c.printMyFavoriteFood()
 }
