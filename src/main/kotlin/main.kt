@@ -1,25 +1,22 @@
 fun main() {
-    val accountType = AccountType.GOLD
+    val p1 = Person("Moses", "Samuel")
+    val p2 = Person("Moses", "Samuel")
+    println(p1 == p2) // true
 
-    // When dealing with a "when" statement, you don't need to exhaustively handle all the cases.
-    when (accountType) {
-        AccountType.PLATINUM -> println("Access allowed")
-    }
-
-    // When dealing with a "when" expression, you must exhaustively handle all the cases.
-    val message = when (accountType) {
-        AccountType.PLATINUM-> "Access allowed"
-        else -> "Not eligible for special access"
-    }
-
-    println(message)
+    val nonDataP1 = NonDataPerson("Moses", "Samuel")
+    val nonDataP2 = NonDataPerson("Moses", "Samuel")
+    println(nonDataP1 == nonDataP2) // false
 }
 
+// Equals / Hashcode / toString are provided for us
+data class Person(val firstName: String, val lastName: String) {
+    fun fullName(): String {
+        return "$firstName $lastName"
+    }
 
-
-enum class AccountType() {
-    BRONZE,
-    SILVER,
-    GOLD,
-    PLATINUM;
+    fun nameLengh(): Int {
+        return fullName().length
+    }
 }
+
+class NonDataPerson(val firstName: String, val lastName: String)
