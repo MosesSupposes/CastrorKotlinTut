@@ -1,6 +1,11 @@
 fun main() {
-    val v = Vehicle("Red")
-    val t = Truck("blue")
-    v.addAxle(4)
+    val lambo = Lambo()
+    val acura = Acura()
+
+    lambo.drive()
+    lambo.driveFast()
+
+    acura.drive()
+    acura.driveFast()
 }
 
