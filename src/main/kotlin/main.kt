@@ -1,15 +1,29 @@
 fun main() {
-    val lambo = Lambo()
-    val acura = Acura()
-    val hatchBack = HatchbackCar("purple", 4, 2)
-    val townCar = TownCar("brown", 4, 4)
-
-    driveVehicle(lambo)
-    driveVehicle(acura)
-    driveVehicle(hatchBack)
-    driveVehicle(townCar)
 }
 
-fun driveVehicle(vehicle: Vehicle) {
-    vehicle.drive()
+interface Discountable {
+    fun discountPercent(): Double
+    fun foo()
+}
+
+class DigitalProduct: Discountable {
+    override fun discountPercent(): Double {
+        TODO("Not yet implemented")
+    }
+
+    override fun foo() {
+        TODO("Not yet implemented")
+    }
+
+}
+
+class GenericToy: Discountable {
+    override fun discountPercent(): Double {
+        TODO("Not yet implemented")
+    }
+
+    override fun foo() {
+        TODO("Not yet implemented")
+    }
+
 }
