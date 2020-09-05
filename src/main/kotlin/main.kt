@@ -1,29 +1,31 @@
 fun main() {
+    var button = Button()
+    button.setMyListener(object: OnClickListener {
+        override fun onClick() {
+            println("This was clicked")
+        }
+    })
+    button.click()
 }
 
-interface Discountable {
-    fun discountPercent(): Double
-    fun foo()
+interface OnClickListener {
+    fun onClick()
 }
 
-class DigitalProduct: Discountable {
-    override fun discountPercent(): Double {
-        TODO("Not yet implemented")
+open abstract class View {
+    lateinit var clickListener: OnClickListener
+
+    fun setMyListener(clickListener: OnClickListener) {
+        this.clickListener = clickListener
+
     }
 
-    override fun foo() {
-        TODO("Not yet implemented")
+    fun click() {
+        clickListener.onClick()
     }
-
 }
 
-class GenericToy: Discountable {
-    override fun discountPercent(): Double {
-        TODO("Not yet implemented")
-    }
+class Button: View()
+class Image: View()
+class Map: View()
 
-    override fun foo() {
-        TODO("Not yet implemented")
-    }
-
-}
