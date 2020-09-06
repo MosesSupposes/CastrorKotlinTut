@@ -1,18 +1,16 @@
 fun main() {
-    val items = arrayOf(1,2,3,4,5)
+    val items = listOf(1,2,3,4,5) // lists are immutable
     items.forEach { println(it) }
 
-    val users = arrayOf(
-        User("Moses", "Samuel"),
-        User("Jane", "Doe")
-    )
-
+    val users = listOf(User("John", "Doe"), User("Jane", "Doe"))
     users.forEach { println(it) }
 
-    val updatedUsers = users.plus(User("John", "Doe"))
-    updatedUsers.forEach { println(it) }
+    val first = users.first()
+    println(first)
 
-    users.set(0, User("Foo", "Bar")) // Arrays are homogenous when dealing with non-primitives (objects)
-    val item = users[0]
-    println(item)
+    val last = users.last()
+    println(last)
+
+    val name: String? = null
+    val stuff = if (name == null) emptyList() else listOf(name)
 }
