@@ -1,37 +1,13 @@
 fun main() {
-    val items = mutableListOf(1,2,3,4,5)
-    items.forEach { println(it) }
+    val names = listOf("Donn", "Bob", "Jane", "Jenny", "Tushar", "Kavita")
+    val filtered = names.filter { it.toLowerCase().contains("a")  }
+    println(filtered)
 
-    println("---------------")
-
-    items.add(6)
-    items.forEach { println(it) }
-
-    println("---------------")
-
-    items.remove(3)
-    items.forEach { println(it) }
-
-    println("---------------")
-
-    items.removeAt(0)
-    items.forEach { println(it) }
-
-    println("---------------")
-
-    val john = User("John", "Doe")
-    val users = mutableListOf<User>(
-        john,
-        User("Jane", "Doe"),
-    )
-
-    users.remove(john)
-    users.forEach{ println(it) }
-
-    println("---------------")
-
-    users[0] = User("Janet", "Doe")
-    users.forEach{ println(it) }
-
-
+    val ages = listOf(23, 33, 12, 9 ,17, 19, 99)
+//    val adults = ages.filter { isAdult(it) }
+    val adults = ages.filter(::isAdult) // this line is equivalent to the line above
+    println(adults)
+}
+fun isAdult(age: Int): Boolean {
+    return age >= 18
 }
