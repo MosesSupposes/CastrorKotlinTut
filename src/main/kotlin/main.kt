@@ -1,16 +1,37 @@
 fun main() {
-    val items = listOf(1,2,3,4,5) // lists are immutable
+    val items = mutableListOf(1,2,3,4,5)
     items.forEach { println(it) }
 
-    val users = listOf(User("John", "Doe"), User("Jane", "Doe"))
-    users.forEach { println(it) }
+    println("---------------")
 
-    val first = users.first()
-    println(first)
+    items.add(6)
+    items.forEach { println(it) }
 
-    val last = users.last()
-    println(last)
+    println("---------------")
 
-    val name: String? = null
-    val stuff = if (name == null) emptyList() else listOf(name)
+    items.remove(3)
+    items.forEach { println(it) }
+
+    println("---------------")
+
+    items.removeAt(0)
+    items.forEach { println(it) }
+
+    println("---------------")
+
+    val john = User("John", "Doe")
+    val users = mutableListOf<User>(
+        john,
+        User("Jane", "Doe"),
+    )
+
+    users.remove(john)
+    users.forEach{ println(it) }
+
+    println("---------------")
+
+    users[0] = User("Janet", "Doe")
+    users.forEach{ println(it) }
+
+
 }
