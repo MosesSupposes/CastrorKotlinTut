@@ -1,10 +1,21 @@
 fun main() {
-    val mine = listOf("Apples", "Grapes")
-    val theirs = listOf("Oranges", "Pears", "Strawberries")
-    val others = listOf("Kiwi", "Watermelon")
+    val groceryBags = listOf(
+        ShoppingBag(listOf("Grapes", "Apples", "Oranges")),
+        ShoppingBag(listOf("Milk", "Eggs", "Pasta")),
+        ShoppingBag(listOf("Bread", "Naan", "Cake"))
+    )
 
-    val result = mine.plus(theirs).plus(others)
-    println(result)
+    val retailBags = listOf(
+        ShoppingBag(listOf("Shirt", "Pants", "Trouser")),
+        ShoppingBag(listOf("Socks", "Shoes")),
+        ShoppingBag(listOf("Jacket", "Sweater", "Scarf"))
+    )
 
-    println(result.minus(theirs))
+    val groceries = groceryBags.flatMap { it.items }
+    println(groceries)
+
+    val clothes = retailBags.map { it.items }
+    println(clothes)
 }
+
+class ShoppingBag(val items: List<String>)
