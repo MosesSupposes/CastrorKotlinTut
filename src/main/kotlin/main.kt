@@ -1,21 +1,7 @@
 fun main() {
-    val groceryBags = listOf(
-        ShoppingBag(listOf("Grapes", "Apples", "Oranges")),
-        ShoppingBag(listOf("Milk", "Eggs", "Pasta")),
-        ShoppingBag(listOf("Bread", "Naan", "Cake"))
-    )
-
-    val retailBags = listOf(
-        ShoppingBag(listOf("Shirt", "Pants", "Trouser")),
-        ShoppingBag(listOf("Socks", "Shoes")),
-        ShoppingBag(listOf("Jacket", "Sweater", "Scarf"))
-    )
-
-    val groceries = groceryBags.flatMap { it.items }
-    println(groceries)
-
-    val clothes = retailBags.map { it.items }
-    println(clothes)
+    val values = listOf(1,2,3,4,5,6,7)
+    for (number in values) {
+       println(number)
+    }
 }
 
-class ShoppingBag(val items: List<String>)
