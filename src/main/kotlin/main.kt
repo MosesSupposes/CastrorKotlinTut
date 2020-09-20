@@ -6,13 +6,17 @@ fun main() {
         Human("Kavita")
     )
 
-    for (person in people) {
-        println(person)
-    }
+    val morePeople = listOf(
+        Human("Donn"),
+        Human("Janet"),
+        Human("Kavita"),
+        Human("Kevin"),
+        Human("Cathy")
+    )
 
-    people.forEach { println(it) }
+    val uniqueValues: Set<Human> = people.union(morePeople)
 
-    
+    println(uniqueValues)
 }
 
 data class Human(val name: String)
