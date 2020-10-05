@@ -1,39 +1,33 @@
 fun main() {
-    val states: Map<String, String> = mapOf( // maps are similar to python dictionaries; also, they can't have duplicate keys
+    var items = mutableMapOf(
         "NY" to "New York",
         "NJ" to "New Jersey",
         "CA" to "California"
     )
 
-    val result = states.get("NY")
-    println(result) // New York
+//    items["TX"] = "Texas"
+    items.put("TX", "Texas") // this is the same as the line above
 
-    val result2 = states["NJ"] // you can use the indexing operator to access an element of a Map
-    println(result2) // "New Jersey"
+    items.remove("NY")
+    println(items)
 
-    println(states.get("FL")) // null
+    items.put("NJ", "Joisey") // this will replace the existing "NJ" key in the map
+    val result = items.putIfAbsent("NJ", "New Jersey") // this won't overwrite the existing field if it's already present
+    println(result) // prints Joisey
+    println(items)
 
-    val result3 = states.getOrElse("FL") { "FOO" }
-    println(result3) // returns "FOO" if it can't find the key "FL"
+    items["NJ"] = "Joisey"
+    items.remove("NJ", "Joisey") // only remove this key if its value is Joisey
+    println(items)
 
-    val result4 = states.containsKey("CA")
-    println(result4) // true
+    items.getOrPut("UT", { "Utah" }) // if "UT" doesn't exist, add it to the map with the specified value
+    println(items)
 
-    val result5 = states.containsValue("California")
-    println(result5) // true
-
-    val result6 = states.entries
-    println(result6)
-
-    val result7 = states.keys
-    println(result7)
-
-    val result8 = states.values
-    println(result8)
+    items.clear()
+    println(items) // {}
 }
 
 
-data class Human(val name: String)
 
 
 
